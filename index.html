@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-businss card</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="ppic.jpg" alt="Your Name" class="profile-pic">
+            <h1>Mohammed Shomrakh</h1>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Motivated and task-oriented recent graduate with a Bachelor's degree in Information Technology from Jeddah University,Completed an internship at Athir for Hospital Technology Solutions, gaining hands-on exposure to IT and software engineering operations and real-world problem-solving. Developed a practical NFC-based attendance system as a graduating project, demonstrating creativity and technical aptitude.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Courses & Skills</h2>
+            <ul>
+                <li>Computer Hardware and Software</li>
+                <li>data structures</li>
+                <li>database management essentials</li>
+                <li>fundamentals of data warehousing</li>
+                <li>object-Oriented programming concepts</li>
+                <li>software Development processes and methodologies</li>
+                <li>networking fundamentals</li>
+                <li>web development fundamentals</li>
+                <li>Oprating systems</li>
+            </ul>
+        </section>
+    
+
+        <section id="resume">
+            <h2>Resume</h2>
+            <embed src="MKS_Resume v3 both En&Ar.pdf" type="application/pdf" width="100%" height="600px" />
+        </section>
+
+        <section id="social">
+            <h2>Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://api.whatsapp.com/send?phone=966542729732" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/m-shumraakh/?locale=en_US" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Mohammed Shomrakh. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        // PDF.js script to render the first page of the PDF
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
+
+        const url = 'MKS_Resume v3 both En&Ar.pdf';
+
+        pdfjsLib.getDocument(url).promise.then(function(pdf) {
+            pdf.getPage(1).then(function(page) {
+                const scale = 1.5;
+                const viewport = page.getViewport({ scale: scale });
+
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                page.render(renderContext);
+
+                document.getElementById('pdf-preview').appendChild(canvas);
+            });
+        });
+    </script>
+
+    
+</body>
+</html>
+

@@ -1,0 +1,117 @@
+:root {
+    --black: #041924;
+    --grey: #14213d;
+    --gold: #fca311;
+    --light-grey: #e5e5e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--black);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 100%;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    object-fit: cover;
+}
+
+h1 {
+    color: var(--gold);
+    margin-top: 15px;
+}
+#skills ul {
+    columns: 2;
+    column-gap: 20px;
+}
+section {
+    background-color: var(--grey);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: var(--gold);
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--gold);
+}
+
+/* Styles for the PDF viewer */
+#resume embed {
+    border: none;
+    background-color: var(--light-grey);
+}
+
+#pdf-preview {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#pdf-preview canvas {
+    width: 100%;
+    height: auto;
+}
+
+#download-pdf {
+    display: block;
+    width: 200px;
+    margin: 20px auto 0;
+    padding: 10px;
+    background-color: var(--gold);
+    color: var(--black);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#download-pdf:hover {
+    background-color: #ffffff;
+}
